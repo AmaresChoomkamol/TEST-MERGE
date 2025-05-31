@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+        .button {
+          border: none;
+          width: 80px;
+          height: 30px;
+          border-radius: 3px;
+          background-color: rgb(233, 233, 233);
+          margin-top: -10px;
+        }
+
+        .button:hover {
+          background-color: rgb(156, 155, 155);
+        }
+
+        .field {
+          display:flex;
+          flex-direction: column;
+          margin-bottom: 1em;
+        }
+
+        .field input[type="text"] {
+          height: 30px;
+          padding-left: 10px;
+        }
+
+        .field input[type="text"]:focus {
+          outline: none;
+          border: rgb(32, 163, 189) solid 1px;
+        }
+
+        .checkbox{
+          display: flex;
+        }
+
+    </style>
+</head>
+<body>
+    <form class="form">
+      <div class="field">
+        <label>First Name</label>
+        <input type="text" name="first-name" placeholder="First Name">
+      </div>
+      <div class="field">
+        <label>Last Name</label>
+        <input type="text" name="last-name" placeholder="Last Name">
+      </div>
+      <div class="field">
+        <div class="checkbox">
+          <input type="checkbox">
+          <label>I agree to the Terms and Conditions</label>
+        </div>
+      </div>
+      <button class="button" type="submit">Submit</button>
+    </form>
+</body>
+</html>
