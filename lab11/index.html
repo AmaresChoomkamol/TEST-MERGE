@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 14 FlexLayout</title>
+    <style>
+        #container {
+            width: 300px ;
+            height: 600px ;
+            display: flex;
+            flex-flow: column wrap;
+            align-content: flex-end;
+            margin-left: auto;
+            justify-content: center;
+        }
+        .box {
+            border: 1px solid black ;
+        }
+        #box1 {
+            background-color: purple;
+            width: 50px;
+            height: 90px;
+            order: 1;
+        }
+        #box2 {
+            background-color: white;
+            width: 50px;
+            height: 280px;
+            order: 1;
+        }
+        #box3 {
+            background-color: red;
+            width: 160px;
+            height: 372px;
+            order: 3;
+        }
+        #box4 {
+            background-color: blue;
+            width: 50px;
+            height: 100px; 
+            order: 1;           
+        }
+        #box5 {
+            background-color: green;
+            width: 100px;
+            height: 100px;
+            
+        }
+        #box6 {
+            background-color: cyan;
+            order: 5;
+            width: 58px;
+            height: 48px;
+            align-self: flex-start;
+        }
+        #box7 {
+            background-color: yellow;
+            order: 5;
+            width: 58px;
+            height: 50px;
+            align-self: flex-start; 
+        }
+
+        #greenBox {
+            display: flex;
+            flex-direction: row;
+            order: 5;
+        }
+
+        #sideBox {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="box1" class="box">1</div> 
+        <div id="box2" class="box">2</div> 
+        <div id="box3" class="box">3</div> 
+        <div id="box4" class="box">4</div>
+
+        <div id="greenBox">
+            <div id="box5" class="box">5</div>
+            <div id="sideBox">
+                <div id="box6" class="box">6</div> 
+                <div id="box7" class="box">7</div> 
+            </div>
+        </div>
+    </div>
+</body>
+</html>
