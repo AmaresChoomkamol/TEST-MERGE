@@ -1,0 +1,1346 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: white;  
+    font-family: "GT-America-Expanded-Black";
+    zoom: 80%; /* ย่อขนาดการแสดงผลของหน้าเว็บเหลือ 80% */
+}
+
+
+/* -------------------- font --------------- */
+
+/* @font-face ใช้เพื่อโหลด font จากไฟล์เพื่อใช้ใน website */
+
+@font-face {
+    font-family: GT-America-Expanded-Black;
+    src: url(Fonts/GT-America-Expanded-Black-1d9c98c9e937c2251bf9b4c3fda5db38.woff2)
+}
+
+@font-face {
+    font-family: GT-America-Extended-Black;
+    src: url(Fonts/GT-America-Extended-Black-e7305ce65de62217f74864437cfc6250.woff2)
+}
+
+@font-face {
+    font-family: GT-America-Extended-Light;
+    src: url(Fonts/GT-America-Extended-Light-0a3767375dc7020228173ee88665d1e3.woff2)
+}
+
+@font-face {
+    font-family: GT-America-Mono-Regular;
+    src: url(Fonts/GT-America-Mono-Regular-72bfafe2cef91603f08edde5514a0afb.woff2)
+}
+
+@font-face {
+    font-family: GT-Sectra-Fine-Bold;
+    src: url(Fonts/GT-Sectra-Fine-Bold-23b3344434247f9eb8cabd9f5e923ee3.woff2)
+}
+
+/* -------------- icon ----------------- */
+
+.bi-bi-search {
+    color: white; /* ให้ icon search (icon แว่นขยายใน search) เป็นสีขาว */
+}
+
+/* ----------------- nav bar ------------------- */
+
+ul {
+    list-style-type: none; /* ลบ bullet list ด้านหน้า */
+    position: fixed; /* กำหนดให้ตำแหน่งลอยอยู่กับที่ */
+    top: 50px; /* ห่างจากขอบบน 50px */
+    width: 90%;
+}
+
+li {
+    display: inline-block;
+    
+}
+
+li a, .top_right a {
+    text-decoration: none; /* ลบขีดเส้นใต้ลิงก์ */
+    color: white;
+    font-size: 120%;
+    padding: 15px;
+}
+
+nav {
+    background-color: rgb(22, 22, 22); /* สีพื้นหลังของ nav*/
+    padding: 65px; 
+    text-align: center; /* จัดกึ่งกลางเนื้อหา */
+    border: rgb(70, 70, 70) solid 1px; /* ขอบเส้น */
+    position: fixed; /* ล็อกตำแหน่งให้อยู่ด้านบนตลอด */
+    width: 100%;
+    z-index: 10; /* ให้อยู่บนสุดของเลเยอร์ */
+}
+
+.top_logo img {
+    width: 80px;
+}
+
+.top_logo a {
+    margin-bottom: -18px;
+    text-decoration: none;
+    color: white;
+    font-size: 120%;
+    display: flex; /* ให้ข้อความกับโลโก้อยู่แนวเดียวกัน */
+    align-items: center; /* จัดให้กึ่งกลางแนวตั้ง */
+    text-align: left; /* ให้ตัวอักษรเรื่มจากทางซ้าย*/
+}
+
+.top_logo {
+    display: block;
+    margin: 10px;
+    position: fixed; /* ให้อยู่กับที่เวลา scroll */
+    top: 10px;
+    left: 10px;
+    cursor: pointer; /* แสดงรูปเมาส์แบบคลิกได้ */
+    z-index: 10;
+    padding-bottom: 10px;
+}
+
+.top_logo a:focus {
+    border: rgb(148, 39, 39) solid; /* ขอบแดงตอนกดแล้วจะอยู่ตลอดจนกว่าจะกดที่อื่น */
+    margin: -3px;
+    margin-bottom: -20px;
+}
+
+.top_logo:hover {
+    box-shadow: 0px 10px 0px #e21a41;
+    transition: ease 0.3s;
+}
+
+.top_logo:not(:hover) {
+    transition: ease 0.3s;
+}
+
+ul a:focus {
+    border: rgb(148, 39, 39) solid;
+    margin: 12px;
+    padding: 0;
+}
+
+.top_right {
+    display: inline;
+    right: 130px;
+    top: 8px;
+    position: absolute;
+}
+
+.top_right a{
+    font-size: 16px;
+    padding-bottom: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
+    margin-right: 14px;
+}
+
+.top_right a:hover {
+    box-shadow: 0px 5px 0px #e21a41;
+}
+
+.top_right a:not(:hover) {
+    transition: all 0.2s ease-out;
+}
+
+.search input{
+    display: block;
+    position: absolute; 
+    right: 147px;
+    top: 45px;
+    font-size: 20px; /* ขนาดตัวอักษรในช่อง search */
+    padding: 20px;
+    padding-right: 110px;
+    height: 30px;
+    background-color: rgb(22, 22, 22);
+    border: white solid 1px;
+    cursor: pointer;
+    color: white;
+}
+
+.search input::placeholder {
+    color: white;
+    padding-left: 20px;
+}
+
+.search:hover input {
+    box-shadow: inset 10px 0 #e21a41;
+    transition: ease-in-out 0.3s;
+    border: none; /* ลบเส้นขอบตอน mouse ไปจ่อ*/
+}
+
+.search:not(:hover) input {
+    transition: ease-in-out 0.3s;
+}
+
+.search input:active, .search input:focus {
+    box-shadow: 0px 0px 15px #e21a41;
+    /* แสดงเงารอบช่อง input ตอนกดหรือ focus */
+}
+
+.search button {
+    position: fixed;
+    right: 16px;
+    top: 46px;
+    height: 72px;
+    width: 40px;
+    cursor: pointer;
+    background-color: rgb(22, 22, 22);
+    border: white solid 1px;
+    border-left-color: rgb(79, 79, 79);
+}
+
+.search:hover button {
+    border-left-color: rgb(89, 3, 3);
+    border-bottom: none;
+    border-right: none;
+    border-top: none;
+}
+
+/* --------------- dropdown ------------ */
+.dropdown {
+    position: absolute;
+    top: 10px;
+}
+
+.dropdown a:active, .dropdown a:focus {
+    padding-left: 15px;
+    border: none;
+    margin-bottom: auto;
+    margin-top: 15px;
+}
+
+.today_menu, .careers_menu, .legacy_menu, .newsroom_menu, .library_menu {
+    display: none; /* ซ่อนเมนูไว้ก่อน */
+    position: absolute;
+    background-color: rgb(22,22,22);
+    width: 252px;
+    height: 260px;
+    left: 540px;
+}
+
+.today_menu:hover, .careers_menu:hover, .legacy_menu:hover, .newsroom_menu:hover, .library_menu:hover {
+    cursor: pointer; 
+}
+
+.dropdown li a:hover {
+    box-shadow: 0px 5px 0px #e21a41;
+    transition: 0.2s;
+    width: 252px;
+    text-align: left;
+}
+
+.dropdown li a:not(:hover) {
+    transition: 0.2s;
+}
+
+.menu:hover .dropdown, .menu:hover .today_menu, .menu:hover .careers_menu,
+.menu:hover .legacy_menu, .menu:hover .newsroom_menu, .menu:hover .library_menu{
+    display: flex; /* ใช้ flex เพื่อจัดเมนู */
+    flex-direction: column; /* เรียงเมนูแนวตั้ง */
+    padding: 0;
+    margin-left: -15px;
+}
+
+.dropdown li {
+    margin-bottom: -10px;
+}
+
+.dropdown li a {
+    box-sizing: border-box; /* รวม padding และ border ในขนาดที่กำหนด */
+    display: inline-block;
+    width: 111%;
+    text-align: left;
+    padding-bottom: 5px;
+    margin-left: 15px;
+}
+
+.today_menu {
+    height: 263px;
+}
+
+.careers_menu {
+    left: 730px;
+    width: 357px;
+    height: 263px;
+}
+
+.careers_menu .dropdown li a {
+    display: block;
+    padding-bottom: 5px;
+}
+
+.careers_menu .dropdown li a:hover {
+    width: 357px;
+}
+
+.legacy_menu {
+    left: 870px;
+    height: 229px;
+}
+
+.newsroom_menu {
+    left: 1000px;
+    height: 160px;
+    width: 417px;
+}
+
+.newsroom_menu .dropdown li a{
+    width: 417px;
+}
+
+.library_menu {
+    left: 1175px;
+    height: 295px;
+    width: 325px;
+}
+
+.library_menu .dropdown li a {
+    width: 325px;
+}
+
+.line_menu {
+    display: none; /* ปิดการแสดงแทบ 3 ขีด (แสดงเฉพาะใน mobile) */
+}
+
+/* ------------ SEC1 ---------- */
+
+.sec1 {
+    background-image: url(Images/SEC1/Threads_About@2x-b4c9b65429f47818297535a7e3b29801.png),
+    repeating-linear-gradient(to left, 
+    rgb(56, 55, 55) 1px, 
+    rgb(56, 55, 55) 2px, 
+    transparent 2px, 
+    transparent calc(101% / 5.76)); /* ตั้งค่าพื้นหลังเป็นภาพตามในเว็บ CIA + เส้นลายแนวนอนสีเทาเข้ม */
+    background-color: rgb(22, 22, 22);
+    background-repeat: no-repeat; /* ไม่ให้ภาพซ้ำ */
+    background-size: contain; /* ปรับภาพให้พอดีกับพื้นที่ */
+    background-position: bottom right; 
+    padding: 585px;
+    border: rgb(70,70,70) solid 1px;
+}
+
+.sec1_content img {
+    position: absolute;
+    right: 250px;
+    top: 350px;
+    width: 700px;
+    height: 850px;
+}
+
+.sec1_content h1 {
+    font-family: "GT-America-Extended-Black"; /* ใช้ฟอนต์แบบหนา */
+    position: absolute;
+    top: 220px;
+    left: 260px;
+    font-size: 80px;
+}
+
+.sec1_info {
+    position: absolute;
+    left: 238px;
+    top: 700px;
+    border-left: #e21a41 solid 1px; /* เส้น border ด้านซ้ายสีแดง */
+    padding-left: 20px;
+}
+
+#sec1_p1{
+    font-family: "GT-America-Extended-Black"; /* ฟอนต์เข้ม */
+    font-size: 20px;
+    padding-bottom: 20px;
+}
+
+#sec1_p2{
+    font-family: "GT-America-Extended-Light"; /* ฟอนต์บาง */
+    font-size: 20px;
+    padding-bottom: 30px;
+}
+
+.sec1_button a{
+    position: absolute;
+    text-decoration: none;
+    color:white;
+    left: 105px;
+    font-size: 20px;
+}
+
+.sec1_button:hover {
+    cursor: pointer;
+}
+
+.sec1_button {
+    display:block;
+    box-sizing: content-box; /* ขนาดรวมเฉพาะเนื้อหา ไม่รวม padding */
+    border: #e21a41 solid 1px;
+    width: 400px;
+    height: 30px;
+    padding: 20px;
+    background-color: #e21a41;
+}
+
+.arrow {
+    display:none; /* ปิดการแสดงลูกศร (แสดงใน mobile เท่านั้น) */
+}
+
+/* -------------------- sec2 -------------- */
+
+.sec2 {
+    padding: 330px;
+    color:black;
+}
+
+.sec2_content img{
+    width: 120px;
+    height: 200px;
+    position: absolute;
+    left: -70px;
+    top: -150px;
+}
+
+.sec2_content {
+    font-family: "GT-Sectra-Fine-Bold";
+    position: absolute;
+    font-size: 25px;
+}
+
+.sec2_content  h1{
+    position: relative;
+    left: -70px;
+    top: -10px;
+    white-space: nowrap; /* ไม่ตัดบรรทัด */
+}
+
+.sec2_info {
+    position: absolute;
+    right: 370px;
+    top: 1250px;
+    border-left: black solid 1px;
+    padding-left: 20px;
+    padding-top: 100px;
+    height: 400px;
+}
+
+.sec2_info h2 {
+    font-size: 15px;
+}
+
+.sec2_info p {
+    font-family: "GT-America-Extended-Light";
+    font-size: 18px;
+    padding-bottom: 50px;
+}
+
+.sec2_info a {
+    text-decoration: none; /* ลิงก์ไม่มีขีดเส้นใต้ */
+    border: rgb(179, 178, 178) solid 1px;
+    padding: 20px;
+    font-size: 20px;
+    color: black;
+}
+
+.sec2_info a:hover {
+    border-color: #e21a41;
+    box-shadow: 0px 5px 0px #e21a41;
+}
+
+.sec2_info a:not(:hover) {
+    transition: box-shadow 0.2s ease-out;
+}
+
+.sec2_rightline {
+    border-right: black solid 1px;
+    position: absolute;
+    height: 670px;
+    right: 334px;
+    top: 1171px;
+}
+
+/* -------------------- sec3 --------------------- */
+
+.sec3 {
+    background-color: rgb(22, 22, 22);
+    padding: 400px;
+    background-image: repeating-linear-gradient(to left, 
+    rgb(56, 55, 55) 1px, 
+    rgb(56, 55, 55) 2px, 
+    transparent 2px, 
+    transparent calc(101% / 5.76)); /* พื้นหลังมีลายเส้นแนวตั้งสีเทา */
+    border: rgb(56,55,55) solid 1px;
+}
+
+.sec3 img {
+    position: absolute;
+    width: 550px;
+    left: 260px;
+    top: 1950px;
+}
+
+.sec3_info {
+    color:white;
+    position: absolute;
+    top: 1950px;
+    right: 300px;
+}
+
+.sec3_info h2 {
+    font-family: "GT-Sectra-Fine-Bold";
+    font-size: 50px;
+}
+
+p.word_strong {
+    font-family: "GT-America-Expanded-Black";
+    font-size: 17px;
+}
+.sec3_info p.word {
+    font-family: "GT-America-Extended-Light";
+    margin-top: 50px;
+    margin-bottom: 70px;
+    font-size: 20px;
+}
+
+.sec3_button {
+    text-decoration: none; /* ลิงก์ไม่มีเส้นใต้ */
+    color: white;
+    border: white solid 1px;
+    padding: 20px;
+}
+
+.sec3_button:hover {
+    border: #e21a41 solid 1px; /* เปลี่ยนขอบเป็นแดงเมื่อ hover */
+    box-shadow: 0px 5px 0px #e21a41;
+}
+
+.sec3_button:not(:hover) {
+    transition: box-shadow 0.2s ease-out;
+}
+
+
+/* ------------------------ sec4 ------------------------ */
+
+.sec4 {
+    padding: 600px;
+    color: black;
+    font-family: "GT-Sectra-Fine-Bold";
+}
+
+.sec4 h2 {
+    position: absolute;
+    font-size: 50px;
+}
+
+.sec4_content > h2 {
+    top: 2730px;
+    left: 275px;
+    white-space: nowrap;
+}
+
+.sec4_box1 {
+    position: absolute;
+    height: 680px;
+    width: 450px;
+    border: black solid 1px;
+    top: 2900px;
+    left: 280px;
+    font-size: 200px;
+}
+
+.sec4_allbox img {
+    width: 450px;
+}
+
+.sec4_allbox h2{
+    font-size: 39px;
+    left: 30px;
+    top: 340px;
+}
+
+.sec4_allbox a{
+    font-family: "GT-America-Extended-Black";
+    position: relative;
+    bottom: -63px;
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+    left: -1px;
+    border: black solid 1px;
+    padding-top: 25px;
+    padding-left: 170px;
+    padding-right: 20px;
+    padding-bottom: 25px;
+}
+
+.sec4_icon {
+    border: black solid 1px;
+    position: absolute;
+    right: -108px;
+    bottom: -1px;
+    padding-bottom: 20px;
+    padding-top: 25px;
+    padding-left: 38px;
+    padding-right: 38px;
+}
+
+.sec4_allbox a:hover {
+    border: #e21a41 solid 1px;
+    transition: all ease-in 0.4s;
+    color: #e21a41;
+    border-right: black solid 1px;
+}
+
+.sec4_allbox a:hover .sec4_icon {
+    border: #e21a41 solid 1px;
+    transition: all ease-in 0.4s;
+    border-left: black solid 1px;
+}
+
+.sec4_allbox a:not(:hover) {
+    transition: all ease-out 0.4s;
+}
+
+.sec4_box2 {
+    position: absolute;
+    height: 680px;
+    width: 450px;
+    border: black solid 1px;
+    top: 2900px;
+    left: 770px;
+    font-size: 200px;
+}
+
+.sec4_box3 {
+    position: absolute;
+    height: 680px;
+    width: 450px;
+    border: black solid 1px;
+    top: 2900px;
+    right: 190px;
+    font-size: 200px;
+}
+
+.sec4_box3 img {
+    height: 338px;
+}
+
+.explore a{
+    font-family: "GT-America-Extended-Black";
+    font-size: 20px;
+    position: absolute;
+    top: 3650px;
+    left: 280px;
+    border: rgb(179, 178, 178) solid 1px;
+    padding: 15px;
+    text-decoration: none;
+    color: black;
+}
+
+.explore a:hover {
+    border: #e21a41 solid 1px;
+    box-shadow: 0px 5px 0px #e21a41;
+}
+
+.explore a:not(:hover) {
+    transition: ease-out 0.2s;
+}
+
+/* ------------------------- sec5 ------------------------- */
+
+
+.sec5 {
+    padding: 300px;
+    background-color: rgb(22,22,22);
+    background-image: repeating-linear-gradient(to left,
+    rgb(56,55,55) 1px,
+    rgb(56,55,55) 2px,
+    transparent 2px,
+    transparent calc(101% / 5.76));
+    color: white;
+    border: rgb(56,55,55) solid 1px;
+}
+
+.sec5_content h2 {
+    font-family: "GT-Sectra-Fine-Bold";
+    font-size: 50px;
+}
+
+.sec5_content p {
+    font-family: "GT-America-Extended-Light";
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+.sec5_content a {
+    text-decoration: none;
+    color: white;
+    font-size: 17px;
+    margin-top: 50px;
+    border: white solid 1px;
+    padding: 15px;
+}
+
+.sec5_content {
+    position: absolute;
+    top: 3950px;
+    left: 250px;
+}
+
+.sec5_content a:hover {
+    border: #e21a41 solid 1px;
+    box-shadow: 0px 5px 0px #e21a41;
+}
+
+.sec5_content a:not(:hover) {
+    transition: ease-out 0.4s;
+}
+
+.sec5 img{
+    position: absolute;
+    width: 998px;
+    height: 598px;
+    right: 0;
+    top: 3835px;
+}
+
+/* --------------------------- footer ------------------------ */
+
+/* --------------------------- foot1 ------------------------------ */
+.foot1 {
+    padding: 371px;
+    background-color: rgb(22,22,22);
+    background-image: url(Images/FOOT1/CIA-AcroMarque@3x-1c4dabbb548e555c2b0978aaf4821113.png);
+    background-repeat: no-repeat;
+    background-position: top right;
+    border: rgb(56,55,55) solid 1px;
+}
+
+.foot1 a {
+    color:white;
+    margin-bottom: 45px;
+    font-family: "GT-America-Extended-Light";
+    font-size: 20px;
+}
+
+.line1, .line2, .line3, .line4 {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    position: absolute;
+    top: 4540px;
+}
+
+.line1 a, .line2 a, .line3 a, .line4 a {
+    box-shadow: inset 0 0 0 0 #e21a41;
+}
+
+.line1 a:hover, .line2 a:hover, .line3 a:hover , .line4 a:hover {
+    text-decoration: none;
+    transition: ease-in 0.4s;
+    box-shadow: inset 300px 0 0 0 #e21a41;
+}
+
+.line1 a:not(:hover), .line2 a:not(:hover), .line3 a:not(:hover), .line4 a:not(:hover) {
+    transition: ease-out 0.4s;
+}
+
+.foot1 h2 {
+    font-size: 40px;
+    font-family: "GT-Sectra-Fine-Bold";
+}
+
+.line1 {
+    left: 260px;
+}
+
+.line2 {
+    left: 600px;
+}
+
+.line3 {
+    right: 700px;
+}
+
+.line4 {
+    right: 300px;
+}
+
+.foot1_box1 {
+    position: absolute;
+    top: 5060px;
+    left: 260px;
+}
+
+.foot1_box1 a, .foot1_box2 a {
+    font-family: "GT-America-Extended-Black";
+    text-decoration: none;
+    border: white solid 1px;
+    padding: 15px;
+}
+
+.foot1_box1 a:hover, .foot1_box2 a:hover {
+    border: #e21a41 solid 1px;
+    box-shadow: 0px 5px 0px #e21a41;
+}
+
+.foot1_box1 a:not(:hover), .foot1_box2 a:not(:hover) {
+    transition: ease-out 0.5s;
+}
+
+.foot1_box2 {
+    position: absolute;
+    top: 5060px;
+    left: 600px;
+}
+
+.social_media_text {
+    font-family: "GT-America-Mono-Regular";
+    position: absolute;
+    top: 5020px;
+    right: 550px;
+}
+
+.social_media_icon {
+    width: 40px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: -5px;
+    white-space: nowrap;
+}
+
+.social_media_icon a {
+    color: red;
+    margin-right: 10px;
+}
+
+
+
+/* --------------------------- foot2 ------------------------- */
+
+.foot2 {
+    padding: 50px;
+    background-color: rgb(22,22,22);
+    border: rgb(56,55,55) solid 1px;
+}
+
+.last-link {
+    border-left: rgb(56,55,55) solid 1px;
+    border-right: rgb(56,55,55) solid 1px;
+    position: absolute;
+    margin-left: 200px;
+    margin-top: -50px;
+    height: 65px;
+    padding-top: 35px;
+    padding-right: 60px;
+}
+
+.last-link a{
+    font-size: 20px;
+    color: white;
+    margin: 20px;
+    font-family: "GT-America-Extended-Light";
+    box-shadow: inset 0 0 0 0 #e21a41;
+}
+
+.last-link a:hover {
+    transition: ease-in 0.4s;
+    box-shadow: inset 300px 0 0 0 #e21a41;
+    text-decoration: none;
+}
+
+.last-link a:not(:hover) {
+    transition: ease-out 0.4s;
+}
+
+/* -------------------------- RESPONSIVE -------------------- */
+
+/* ------------------ Mobile L (425px width) ------------------ */
+
+@media only screen and (max-width: 426px) {
+    body {
+        zoom: normal; /* ให้ zoom กลับมาค่าปกติ (ไม่ย่อ) */
+    }
+    nav {
+        padding: 50px;
+        text-align: left;
+        display: flex;
+        position: fixed;
+        flex-direction: row;
+        align-items: flex-start;
+        width: 100%;
+        overflow-x: hidden; /* ไม่ให้เลื่อนในแนวนอน */
+    }
+
+    .top_logo {
+        position: static; 
+        margin: 10px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .top_logo p {
+        visibility: hidden; /* ซ่อนข้อความ p */
+        position: absolute;
+        top: -15px;
+        left: -10px;
+    }
+
+    .top_logo p::after {
+        content: "CIA"; /* สร้างข้อความใหม่เป็น "CIA" */
+        visibility: visible; /* แสดงข้อความใหม่ */
+        font-size: 50px;
+    }
+
+    .top_logo img {
+        width: 70px;
+        top: 50px;
+        left: 20px;
+        position: absolute;
+        height: 70px;
+        margin-right: 10px;
+    }
+
+    .top_logo:hover, .top_logo a:focus {
+        box-shadow: none;
+        border: none;
+    }
+
+    ul {
+        display: none; /* ซ่อนเมนูหลัก (รายการ ul) */
+    }
+
+    li {
+        display: none; /* ซ่อนรายการเมนูย่อย */
+    }
+
+    .top_right a {
+        font-size: 0.9em;
+        padding: 10px 0;
+    }
+
+    .top_right {
+        position: absolute;
+        display: flex; /* ใช้ Flexbox */
+        flex-direction: row; /* เรียงลิงก์แนวนอน */
+        align-items: flex-start;
+        white-space: nowrap; /* ไม่ตัดบรรทัด */
+        margin-top: 20px;
+        top: -20px;
+        left: 20px;
+    }
+
+    .top_right a {
+        margin-left: 0;
+        margin-bottom: 5px;
+        display: block; /* แสดงลิงก์เป็นบล็อกเต็มบรรทัด */
+        width: 100%;
+        font-size: 17px;
+        box-sizing: border-box; /* คำนวณขนาดรวม padding */
+    }
+
+    /* ซ่อน Search Bar ในหน้าจอเล็ก */
+    .search {
+        display: none; 
+    }
+
+    /* ซ่อน Dropdown Menu */
+    .dropdown {
+        display: none;
+    }
+
+    .line_menu{
+        display: block; /* แสดงปุ่มเมนูแบบเส้น (3 เส้น) */
+    }
+
+    .line_menu span{
+    border-top: white solid 2px;
+    position: absolute;
+    width: 50px;
+    top: 100px;
+    left: 480px;
+    }
+
+    .line_menu #line1 {
+        top: 80px;
+    }
+
+    .line_menu #line2 {
+        top: 90px;
+        width: 60px;
+        left: 470px;
+    }
+
+
+/* --------------------------- sec1 --------------------------------- */
+
+    .sec1 {
+        padding: 100px;
+        padding-bottom: 1350px;
+        padding-right: 454px;
+        background-size: contain;
+        background-position: bottom;
+        box-sizing: border-box;
+        background-image: url(Images/SEC1/Threads_About@2x-b4c9b65429f47818297535a7e3b29801.png), 
+        repeating-linear-gradient(to left,
+        rgb(56,55,55) 1px,
+        rgb(56,55,55) 2px,
+        transparent 1px,
+        transparent calc(100% / 2)); /* พื้นหลังซ้อนกัน 2 ชั้น: รูปภาพ + เส้นซ้ำ */
+    }
+
+    .sec1_content {
+        box-sizing: border-box;
+    }
+
+    .sec1_content img {
+        position: absolute;
+        left: 20px;
+        width: 520px;
+        height: 520px;
+        top: 900px;
+    }
+
+    .sec1_content h1 {
+        font-size: 70px;
+        width: 500px;
+        position: absolute;
+        top: 100px;
+        left: 50px;
+    }
+
+    .sec1_info {
+        position: absolute;
+        left: 50px ;
+        top: 520px;
+        font-size: 23px;
+        width: 500px;
+        height: 375px;
+        padding-left: 15px;
+        box-sizing: border-box;
+    }
+
+    #sec1_p1 {
+        font-size: 24px;
+        padding-bottom: 10px;
+        box-sizing: border-box;
+    }
+
+    #sec1_p2 {
+        font-size: 0.8em;
+        padding-bottom: 15px;
+        box-sizing: border-box;
+    }
+
+    .sec1_button {
+        position: absolute;
+    }
+
+    .sec1_button a {
+        font-size: 20px;
+        left: 50px;
+        box-sizing: border-box;
+    }
+
+    .arrow {
+        display: block; /* แสดงลูกศรข้าง .sec1_button ในมือถือ */
+        float: right;
+        background-color: rgb(22,22,22);
+        padding: 18.5px;
+        right: -23px;
+        top: -22px;
+        border: red solid 1px;
+        position: relative;
+    }
+
+    /* ------------------ sec2 ---------------------- */
+
+    .sec2 {
+        padding-bottom: 1650px;
+    }
+
+    .sec2_content {
+        left: 120px;
+        top: 1500px;
+    }
+
+    .sec2_content img{
+        top: 60px;
+    }
+    .sec2_content h1 {
+        top: 200px;
+    }
+
+    .sec2_info {
+        padding-top: 200px;
+        position: absolute;
+        left: 10px;
+        top: 2000px;
+        width: 515px;
+        text-align: left; /* จัดข้อความชิดซ้าย */
+        border-left: none; /* ไม่มีเส้นขอบซ้าย */
+        border-top: rgb(56,55,55) solid 1px;
+    }
+
+    .sec2_info h2 {
+        font-size: 20px;
+    }
+
+    .sec2_info p {
+        font-size: 22px;
+    }
+
+    .sec2_rightline {
+        top: 1450px;
+        right: -120px;
+        height: 1450px;
+    }
+
+    .sec2_info a {
+        padding-right: 200px;
+    }
+
+/* ----------------------- sec3 ---------------------------- */
+    .sec3 {
+        padding-bottom: 150px;
+        width: 556px;
+        margin-top: -255px;
+        background-image: repeating-linear-gradient(to left,
+        rgb(56,55,55) 1px,
+        rgb(56,55,55) 2px,
+        transparent 1px,
+        transparent calc(100% / 2)); /* ลายเส้นแนวตั้งในพื้นหลัง */
+    }
+
+    .sec3_info h2 {
+        position: relative;
+        left: 50px;
+    }
+
+    .sec3_info p{
+        text-align: left;
+        width: 470px;
+        left: 50px;
+        position: relative;
+    }
+
+    .sec3_button {
+        position: relative;
+        left: 50px;
+        padding-right: 150px;
+    }
+
+/* ------------------ sec4 ----------------------- */
+
+    .sec4 {
+        padding-bottom: 200px;
+    }
+
+    .sec4_allbox{
+        width: 500px !important;
+    }
+
+    .sec4_box1 a {
+        left: 0;
+        top: -140px;
+        padding-right: 67.5px;
+    }
+
+    .sec4_box1 h2 {
+        margin-top: -20px;
+        margin-left: 50px;  
+    }
+
+    .sec4_allbox img{
+        width: 500px;
+        height: 344px;
+    }
+
+    .sec4_box2 a {
+        left: 0;
+        top: -95px;
+        padding-right: 67.5px;
+    }
+
+    .sec4_box2 h2 {
+        margin-top: -20px;
+        margin-left: 50px;
+    }
+
+    .sec4_box2 {
+        height: 627px;
+    }
+
+    .sec4_box3 a{
+        left: 0;
+        top: -141px;
+        padding-right: 67.5px;
+    }
+
+    .sec4_box3 h2 {
+        margin-top: -20px;
+        margin-left: 50px;
+    }
+
+    .explore a{
+        top: 6480px;
+        white-space: nowrap;
+        left: 20px;
+        padding-right: 220px;
+    }
+
+
+/* ---------------------------- sec5 ---------------------------- */
+
+    .sec5 {
+        width: 556px;
+        padding-bottom: 850px;
+        background-image: repeating-linear-gradient(to left,
+        rgb(56,55,55) 1px,
+        rgb(56,55,55) 2px,
+        transparent 1px,
+        transparent calc(100% / 2));
+    }
+
+    .sec5 img {
+        position: absolute ;
+        top: 6620px;
+        height: 450px;
+        width: 500px;
+        left: 25px;
+    }
+
+    .sec5_content {
+        position: absolute;
+        top: 7100px;
+        width: 500px;
+        left: 40px;
+        text-align: left;
+    }
+
+    .sec5_content p {
+        font-size: 19px;
+    }
+
+    .sec5_content a {
+        padding-right: 150px;
+    }
+
+/* --------------------------- foot1 ------------------------- */
+
+    .foot1 {
+        padding: 100px;
+        padding-right: 454px;
+        padding-bottom: 50px;
+        width: 550px;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        background-position: top right;
+        box-sizing: border-box;
+        white-space: nowrap;
+    }
+
+    .foot1 h2 {
+        margin-top: 0px;
+    }
+
+    .foot1_box1 {
+        margin-bottom: 50px;
+        margin-top: 50px;
+    }
+
+    .foot1_box1 a{
+        padding-right: 200px;
+    }
+    
+    .foot1_box2 a {
+        padding-right: 305px;
+    }
+
+    .line1, .line2, .line3, .line4,
+    .foot1_box1, .foot1_box2 ,.social_media_text{
+        position: static;
+        width: 100%;
+        margin-left: -50px;
+        box-sizing: border-box;
+    }
+
+    .social_media_text {
+        font-size: 18px;
+        margin-top: 50px;
+    }
+    .social_media_icon {
+        margin-top: 30px;
+    }
+
+/* ----------------------------- foot2 ---------------------------------- */
+
+    .foot2 {
+        display: block;
+        padding: 100px;
+        padding-right: 454px;
+    }
+
+    .last-link {
+        display: block;
+        top: 9810px;
+        border: none;
+        position: absolute;
+        left: -150px;
+        width: 500px;
+        box-sizing: border-box;
+    }
+
+    .last-link a {
+        padding-right: 10px;
+    }
+
+
+/* -------------------------- share rule ---------------------------- */
+
+    .sec2, .sec3, .sec4, .sec5 {
+        padding-top: 40px;
+        padding-right: 15px;
+        padding-left: 15px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    .sec3 img, .sec3_info, .sec4 h2, .sec4_content > h2,
+    .sec4_allbox, .sec4_box1, .sec4_box2, .sec4_box3, .explore{
+        position: static;
+        left: auto;
+        top: auto;
+        right: auto;
+        margin-bottom: 20px;
+        width: 90%;
+        text-align: left;
+        align-items: center;
+    }
+
+    .sec4_box1, .sec4_box2, .sec4_box3 {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+/* ----------------------------- .sec2_rightline แก้เพื่อให้เส้นแนวตั้งใน .sec2 ชนกับ เส้น border ของ .sec2_info --------------------------------------------- */
+
+/* -------------------------- Mobile M (375px width) ------------------- */
+
+/* ------------------------ sec2 ---------------------------- */
+
+@media only screen and (max-width: 376px) {
+    .sec2_rightline {
+        right: -170px;
+    }
+
+}
+
+/* ---------------------------- Mobile S (320px width) ---------------------------- */
+
+/* --------------------------- sec2 ----------------------------------- */
+
+@media only screen and (max-width: 321px) {
+    .sec2_rightline {
+        right: -225px;
+    }
+}
